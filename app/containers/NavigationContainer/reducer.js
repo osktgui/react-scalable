@@ -23,7 +23,7 @@ function navigationContainerReducer(state = initialState, action) {
     case TOGGLE_DRAWER:
       return state.set('isDrawerOpen', !state.get('isDrawerOpen'))
     case SELECT_TOPIC:
-      return state.set('selectTopic', action.topic);
+      return state.set('selectTopic', action.topic).set('isDrawerOpen', false);
     default:
       return state;
   }
