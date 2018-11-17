@@ -8,6 +8,7 @@ import React from 'react';
 
 
 import styles from './styles.css';
+import classNames from 'classnames';
 
 function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen }) {
   const itemNodes = item.map(item => (
@@ -18,7 +19,7 @@ function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen })
     </div>
   ));
   return (
-    <div className={styles.drawer}>
+    <div className={classNames(styles.drawer, { [styles.drawerOpen]: isDrawerOpen })}>
       {itemNodes}
     </div>
   );
