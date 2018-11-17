@@ -11,7 +11,7 @@ import styles from './styles.css';
 import classNames from 'classnames';
 
 function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen }) {
-  const itemNodes = item.map(item => (
+  const itemNodes = items.map(item => (
     <div className={styles.item}
       key={item[itemKeyAttr]}
       onClick={() => selectItem(item)}>
@@ -26,7 +26,7 @@ function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen })
 }
 
 Drawer.propTypes = {
-  items: React.propTypes.array.isRequired,
+  items: React.PropTypes.array.isRequired,
   selectItem: React.PropTypes.func.isRequired,
   itemLabelAttr: React.PropTypes.string.isRequired,
   itemKeyAttr: React.PropTypes.string.isRequired,
