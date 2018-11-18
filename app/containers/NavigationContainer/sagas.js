@@ -20,7 +20,7 @@ function* fetchTopics() {
 }
 
 function* pushTopic (action) {
-  yield put(push(`/topic/${ action.topic.name }`));
+  yield put(push(`/topics/${ action.topic.name }`));
 }
 
 export function* selectTopicSaga() {

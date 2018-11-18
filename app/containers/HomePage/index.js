@@ -14,14 +14,14 @@ import NavigationContainer from '../../containers/NavigationContainer';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
-    children: React.propTypes.element
+    children: React.PropTypes.element,
   };
 
   render() {
     return (
       <div>
         <NavigationContainer />
-        { this.props.children }
+        {this.props.children}
       </div>
 
     );

@@ -56,13 +56,13 @@ export default function createRoutes(store) {
 
             importModules.then(([reducer, sagas, component]) => {
               injectReducer('linkListContainer', reducer.default);
-              injectSagas(sagas.default);
+              injectSagas('linkListContainer', sagas.default);
               renderRoute(component);
             });
 
             importModules.catch(errorLoading);
           },
-        }
+        },
       ],
     }, {
       path: '*',
