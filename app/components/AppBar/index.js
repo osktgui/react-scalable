@@ -10,7 +10,8 @@ import { Link } from 'react-router';
 
 import styles from './styles.css';
 
-function AppBar({ toggleDrawer }) {
+function AppBar({ toggleDrawer, email }) {
+  const loginLink = email || (<Link to="/login"> Login</Link>);
   return (
     <div className={styles.appBar}>
       <div className={styles.iconButton}
@@ -24,13 +25,14 @@ function AppBar({ toggleDrawer }) {
         Coder daily
       </div>
       <div className={styles.linkContainer}>
-        <Link to='/login'>Login</Link>
+        { loginLink }
       </div>
     </div>
   );
 }
 
 AppBar.propTypes = {
+  email: React.PropTypes.string,
   toggleDrawer: React.PropTypes.func.isRequired
 };
 
