@@ -6,15 +6,15 @@
 
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-
+import classNames from 'classnames';
 import styles from './styles.css';
 
-function IconButton({ onClick, icon }) {
+function IconButton({ onClick, icon, iconClass, buttonClass }) {
   return (
-    <div className={styles.iconButton}
+    <div className={ classNames(styles.iconButton, buttonClass) }
       onClick={ onClick }>
       <FontAwesome
-        className={styles.icon}
+        className={iconClass}
         name={icon}
       />
     </div>
@@ -23,7 +23,9 @@ function IconButton({ onClick, icon }) {
 
 IconButton.propTypes = {
   icon: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  onClick: React.PropTypes.func.isRequired,
+  iconClass: React.PropTypes.string,
+  buttonClass: React.PropTypes.string,
 };
 
 export default IconButton;
