@@ -10,7 +10,7 @@ import Link from '../Link';
 import styles from './styles.css';
 import IconButton from '../IconButton';
 
-function LinkList({ links, topicName, children }) {
+function LinkList({ links, topicName, children, startAdd }) {
   const linkNodes = links.map(link => (
     <Link key={ link.id } link={ link } />
   ));
@@ -22,6 +22,7 @@ function LinkList({ links, topicName, children }) {
         icon='plus'
         buttonClass={styles.button}
         iconClass={styles.icon}
+        onClick={() => startAdd(topicName)}
       />
       { children }
     </div>
@@ -29,6 +30,7 @@ function LinkList({ links, topicName, children }) {
 }
 
 LinkList.propTypes = {
+  startAdd: React.PropTypes.func.isRequired,
   children: React.PropTypes.element,
   topicName: React.PropTypes.string.isRequired,
   links: React.PropTypes.arrayOf(
