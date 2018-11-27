@@ -7,8 +7,15 @@
 import {
   ADD_LINK,
   ADD_LINK_SUCCESS,
-  ADD_LINK_FAILED
+  ADD_LINK_FAILED,
+  ADD_LINK_CANCELLED
 } from './constants';
+
+export function addLinkCancelled(link) {
+  return {
+    type: ADD_LINK_CANCELLED
+  };
+}
 
 export function addLink(link) {
   return {

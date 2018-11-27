@@ -12,7 +12,8 @@ import TextInput from '../TextInput';
 class LinkForm extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     addLink: React.PropTypes.func.isRequired,
-    topicName: React.PropTypes.string.isRequired
+    topicName: React.PropTypes.string.isRequired,
+    addLinkCancelled: React.PropTypes.func.isRequired
   };
 
   state = {
@@ -73,7 +74,7 @@ class LinkForm extends React.Component { // eslint-disable-line react/prefer-sta
 
           <div className={styles.actionContainer}>
             <div className={styles.button}
-              onClick={ this.props.cancelLogin }>
+              onClick={ this.props.addLinkCancelled }>
               Cancel
             </div>
             <div className={styles.button}
